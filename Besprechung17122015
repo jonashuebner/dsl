@@ -1,0 +1,41 @@
+- Java
+- Über den Scope sprechen
+- internal DSL (wenn keine external DSL bevorzugt wird)
+- brauche das Semantic Model
+
+Mir persönlich gefällt MethodChaining am besten. Ist irgendwie sehr intuitiv und variabel.
+Drei Möglichkeiten: 
+
+Method Chaining
+
+	good for optional attributes in an object
+
+
+Function Sequence 
+
+	nice for defining elements of a list
+
+	computer(...);
+	computer(...);
+	computer(...);
+
+Nested Function 
+
+	eliminates the need for a Context Variable for the current computer
+
+	computer(
+		function1(),
+		function2(),
+		function3());
+
+combination
+
+- webtracking / webanalyse
+- für was braucht man eine tracking dsl
+	entwickler, q.a., fachliche domäne, anwendungsfälle, fehlersuche, automatisierte Tests
+
+fallback, sinnvolle default value 
+
+verschiedene formate ausgeben
+
+easy mock

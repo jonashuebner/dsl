@@ -1,0 +1,49 @@
+Defining Domain-specific languages
+
+* a computer programming language of limited expressiveness focused on a particular domain
+* computer programming language: 
+** used by humans to instruct a computer to do something
+* language nature:
+** sense of fluency => expressiveness comes not just from individual expressions but also from the way they can be composed together
+* limited expressiveness:
+** supports a minimum of features needed to support its domain
+* domain focus:
+** clear focus on a small domain
+* not turing complete
+
+Internal & external DSL, language workbench
+* internal DSL:
+** general-purpose language
+** using a subset of the language's features in a particular style to handle one small aspect of the overall language
+** result should have the feel of a custom language
+** difference of internal DSL and a common API
+*** language nature (API defines the vocabulary, internal DSL adds a grammar)
+**** method '.to()' -> bad in API, makes sense in a context: '.transition(holmerStraße).to(hetlingen)'
+*** commonand - query API <-> fluent API
+
+
+* external DSL:
+** language seperate from the main language of the application it works with
+** custom syntax or using another languages syntax (XML)
+** parsed by a code in the host application
+** regular expressions, sql, xml
+
+Wofür soll die DSL entstehen?
+
+* Improving Development Productivity
+* Communication with Domain Experts
+* Change in Execution Context (shifting logic from compile time to runtime)
+* Alternative Computational Model (declarative not imperative programming)
+
+Bestandteile von DSL's
+
+script (controller)
+parser
+semantic model
+
+In internal DSL's:
+
+Der Parser besteht bei internal DSL's aus einem Layer von Objekten, dass eine sprechende Sprache bereitstellt und dann in das semantische Modell überführt.
+Das semantische Modell bietet einen Schnittstelle, dass nach dem command - query Prinzip arbeitet.
+Der Parser bietet einen Schnittstelle, die sprechende Namen enthält. (fluent) Der Parser ruft dann die Schnittstelle des semantischen Modells auf.
+Der Parser existiert, weil es nicht ein Interface geben soll, dass command - query und fluent API verbindet.

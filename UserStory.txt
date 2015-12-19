@@ -17,6 +17,7 @@ Komponenten:
 
 * Dokumentation der DSL mittels Mark-Down Files, die zum Code gehören 
    und versioniert sind
+
 * [optional] Verwendung der Library in einem HTTP-Service, damit die 
    DSL über REST angesprochen werden kann
 * [optional] Einbau der Library mit zugehöriger REST API in eine Webanwendung 
@@ -28,9 +29,6 @@ Akzeptanzkriterien:
 * Es ist in Zusammenarbeit mit etracker eine DSL für die Anwendung spezifiziert
 * Die Tracking-DSL ist in Java (Version 7 oder 8) als eigenständige Library gebaut
 * Das Buildsystem ist gradle
-
-	// Muss das unbedingt sein?
-
 * Die Vewendung externer Bibliotheken ist mit etracker abgestimmt
 * Die Tracking-DSL ist die öffentliche Schnittstelle der Library
 * Die Funktion der DSL ist mit Hilfe von Unit-/Moduletests beschrieben
