@@ -1,16 +1,33 @@
 package controller;
 
-import builder.OrderBuilder;
+import formatBuilder.ConsoleFormatter;
+import formatBuilder.MasterFormatter;
+import parser.EventBuilder;
 
-public class TestController {
+public class TestController implements MasterController {
 
-	public static void main(String[] argv) {
+	public void main(String[] argv) {
 		
-		OrderBuilder orderBuilder = new OrderBuilder();
+		ConsoleFormatter formatter = new ConsoleFormatter(); 
 		
-		orderBuilder.add().
-			addArticle("Hose").
-			addArticle("T-Shirt");
+		useDSL(formatter);
+	}
 
+	@Override
+	public String useDSL(MasterFormatter formatter) {
+		
+		EventBuilder eventBuilder = new EventBuilder();
+		
+		eventBuilder
+		.addOrder()
+			.addArticle("T-Shirt")
+			.byUser("001")
+		.end()
+		.addOrder()
+			.addArticle("Hose")
+		.end()
+		;
+		
+		return formatter.format(eventBuilder);
 	}
 }
