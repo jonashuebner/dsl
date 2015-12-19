@@ -1,22 +1,36 @@
-package builder;
+package parser;
 
-import events.Article;
-import events.Order;
+import model.Article;
+import model.Order;
 
-public class OrderBuilder extends EventBuilder<Order> {
-
-	public OrderBuilder add() {
-		events.add(new Order());
-		return this;
+public class OrderBuilder extends MasterBuilder {
+	
+	public OrderBuilder(EventBuilder master) {
+		
+		this.master = master;
+	}
+	
+	public EventBuilder end() {
+		
+		return (EventBuilder) master;
+	}
+	
+	@Override
+	protected Order getCurrentEvent() {
+		return (Order) master.getCurrentEvent();
 	}
 	
 	public OrderBuilder addArticle(String name) {
 		Article article = new Article(name);
-		getCurrentOrder().addArticle(article);
+		getCurrentEvent().addArticle(article);
 		return this;		
 	}
-	
-	private Order getCurrentOrder() {
-		return events.get(events.size() - 1);
+
+	@Override
+	public OrderBuilder byUser(String userId) {
+
+		getCurrentEvent().setUserId(userId);
+		return (OrderBuilder) this;
 	}
+	
 }
