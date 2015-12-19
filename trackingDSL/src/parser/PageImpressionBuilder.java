@@ -2,7 +2,7 @@ package parser;
 
 import model.PageImpression;
 
-public class PageImpressionBuilder extends MasterBuilder {
+public class PageImpressionBuilder extends SecondLayerBuilder {
 
 	public PageImpressionBuilder(EventBuilder master) {
 		

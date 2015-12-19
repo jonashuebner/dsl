@@ -3,7 +3,7 @@ package parser;
 import model.Article;
 import model.Order;
 
-public class OrderBuilder extends MasterBuilder {
+public class OrderBuilder extends SecondLayerBuilder {
 	
 	public OrderBuilder(EventBuilder master) {
 		

@@ -25,5 +25,16 @@ public abstract class Event {
 		return this.id;
 	}
 	
+	@Override
+	public String toString() {
+		
+		String retVal = "";
+		
+		retVal = "UserId : " + userId + ";\n";
+		retVal += "Id : " + id + ";\n"; 
+		
+		return retVal;
+	}
+	
 }
 

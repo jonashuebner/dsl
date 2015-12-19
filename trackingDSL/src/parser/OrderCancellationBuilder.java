@@ -2,7 +2,7 @@ package parser;
 
 import model.OrderCancellation;
 
-public class OrderCancellationBuilder extends MasterBuilder {
+public class OrderCancellationBuilder extends SecondLayerBuilder {
 	
 	public OrderCancellationBuilder(EventBuilder master) {
 		

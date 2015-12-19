@@ -25,6 +25,11 @@ public class EventBuilder extends MasterBuilder {
 		this.orderCancellationBuilder = new OrderCancellationBuilder(this);
 	}
 	
+	public static EventBuilder eventBuilder() {
+		
+		return new EventBuilder();
+	}
+	
 	public OrderBuilder addOrder() {
 		
 		events.add(new Order());
@@ -48,18 +53,18 @@ public class EventBuilder extends MasterBuilder {
 
 		return events.get(events.size() - 1);
 	}
-
-	@Override
-	public MasterBuilder end() {
-		
-		return null;
-	}
-
-	@Override
-	public MasterBuilder byUser(String userId) {
-
-		return null;
-	}
 	
+	@Override
+	public String toString() {
+		
+		String retVal = "";
+		
+		for (Event event : events) {
+			
+			retVal += event.toString();
+		}
+		
+		return retVal;
+	}
 	
 }

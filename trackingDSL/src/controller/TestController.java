@@ -6,17 +6,16 @@ import parser.EventBuilder;
 
 public class TestController implements MasterController {
 
-	public void main(String[] argv) {
+	public static void main(String[] argv) {
 		
 		ConsoleFormatter formatter = new ConsoleFormatter(); 
 		
-		useDSL(formatter);
+		System.out.println(useDSL(formatter));
 	}
 
-	@Override
-	public String useDSL(MasterFormatter formatter) {
+	public static String useDSL(MasterFormatter formatter) {
 		
-		EventBuilder eventBuilder = new EventBuilder();
+		EventBuilder eventBuilder = EventBuilder.eventBuilder();
 		
 		eventBuilder
 		.addOrder()
@@ -30,4 +29,5 @@ public class TestController implements MasterController {
 		
 		return formatter.format(eventBuilder);
 	}
+
 }
